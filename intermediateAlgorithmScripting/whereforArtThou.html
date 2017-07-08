@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function whatIsInAName(collection, source) {
+            // What's in a name?
+            var arr = [];
+            // Only change code below this line
+            for(let cnt = 0; cnt < collection.length; cnt++){
+                let doesHave = true;
+                for(let key in source){
+                    if(collection[cnt].hasOwnProperty(key)){
+                        if(collection[cnt][key] !== source[key]){
+                            doesHave = false;
+                            break;
+                        }
+                    }else{
+                        doesHave = false;
+                        break;
+                    }
+                }
+                if(doesHave){
+                    arr.push(collection[cnt]);
+                }
+            }
+            // Only change code above this line
+            return arr;
+        }
+
+        var aaa = whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+        console.log(aaa);
+    </script>
+</body>
+
+</html>

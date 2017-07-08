@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        debugger;
+        function diffArray(arr1, arr2) {
+            var newArr = [];
+            // Same, same; but different.
+            for(let cnt = 0; cnt < arr1.length; cnt++){
+                let tempIdx = 0;
+                while(arr2.indexOf(arr1[cnt]) !== -1){
+                    let removeIdx = arr2.indexOf(arr1[cnt]);
+                    arr2 = arr2.filter(function(item, idx){
+                        return idx !==removeIdx;
+                    });
+                    tempIdx++;
+                }
+                if(!tempIdx){
+                    newArr = newArr.concat(arr1.slice(cnt, cnt+1));
+                }
+            }
+            newArr = newArr.concat(arr2);
+            return newArr;
+        }
+
+        console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
+        console.log(diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
+    </script>
+</body>
+</html>

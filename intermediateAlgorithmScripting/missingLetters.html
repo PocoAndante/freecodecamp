@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var alphabet = 'abcdefghijklmnopqrstuvwxyz'
+        function fearNotLetter(str) {
+            var tempIdx = alphabet.indexOf(str.charAt(0));
+            var tempMax = tempIdx + str.length;
+            var result;
+            for(let cnt = 0; tempIdx < tempMax; cnt++, tempIdx++){
+                if(str.charAt(cnt) !== alphabet.charAt(tempIdx)){
+                    result = alphabet.charAt(tempIdx);
+                    break;
+                }
+            }
+            return result;
+        }
+
+        var aaa = fearNotLetter("abce");
+        console.log(aaa);
+    </script>
+</body>
+
+</html>
