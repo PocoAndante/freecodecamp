@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        debugger;
+        function rot13(str) { // LBH QVQ VG!
+            var tempArr = [];
+            for(let cnt = 0; cnt < str.length; cnt++){
+                let tempNum = str.charCodeAt(cnt);
+                if(tempNum >= 65 && tempNum < 91 ){
+                    if(tempNum < 78){
+                        tempNum +=13;
+                    }else{
+                        tempNum -=13;
+                    }
+                }
+                tempArr.push(String.fromCharCode(tempNum));
+            }
+            return tempArr.join('');
+        }
+
+        // Change the inputs below to test
+        var aaa = rot13("SERR PBQR PNZC");
+        console.log(aaa);
+    </script>
+</body>
+
+</html>
